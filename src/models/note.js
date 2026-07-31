@@ -2,7 +2,7 @@
 
 import { Schema } from 'mongoose';
 import { model } from 'mongoose';
-import { TAGS } from '../utils/constants.js';
+import { TAGS } from '../constants/tags.js';
 
 const noteSchema = new Schema(
   {
