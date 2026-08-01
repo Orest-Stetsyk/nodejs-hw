@@ -37,7 +37,7 @@ export const getAllNotes = async (req, res) => {
 // Отримати одну нотатку за id
 export const getNoteById = async (req, res) => {
   const { noteId } = req.params;
-  const note = await Note.findById({
+  const note = await Note.findOne({
     _id: noteId,
     userId: req.user._id
   });
@@ -63,7 +63,7 @@ export const createNote = async (req, res) =>{
 export const deleteNote = async (req, res) => {
   const { noteId } = req.params;
 
-  const note = await Note.findByIdAndDelete({
+  const note = await Note.findOneAndDelete({
     _id: noteId,
     userId: req.user._id
   });
